@@ -1,0 +1,16 @@
+minion1:
+  nome: Minion Verde
+  descricao: Este Minion e verde e muito bonito
+  preco: 10
+  
+minion2:
+  nome: Minion Amarelo
+  descricao: Este Minion e amarelo e muito bonito
+  preco: 150
+
+<% 30.times do |n| %>
+ss_<%= n %>:
+  nome:  <%= "Minion #{n}" %>
+  descricao: <%= "Este Minion está na lista de preferência n {n} das pessoas" %>
+  preco: <%= n %>
+<% end %>

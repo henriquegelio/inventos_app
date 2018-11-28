@@ -31,3 +31,12 @@ users = User.order(:created_at).take(6)
   content = Faker::Lorem.sentence(5)
   users.each { |user| user.microposts.create!(content: content) }
 end
+
+50.times do
+  nome = Faker::Pokemon.name
+  preco = Faker::Commerce.price.round
+  descricao = Faker::Lorem.sentence(5)
+  Produto.create!(nome: nome,
+                  descricao: descricao,
+                  preco: preco)
+end

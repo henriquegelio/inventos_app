@@ -8,6 +8,8 @@ header.navbar.navbar-fixed-top.navbar-inverse
         - if logged_in?
           li
             = link_to "Users", users_path
+          li
+            = link_to "Produtos a Venda", produtos_path
           li.dropdown
             a.dropdown-toggle[href="#" data-toggle="dropdown"]
               |  Account 
