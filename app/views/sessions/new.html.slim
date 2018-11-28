@@ -1,0 +1,20 @@
+- provide(:title, "Entrar em sua conta")
+h1
+  | Entrar na sua conta
+.row
+  .col-md-6.col-md-offset-3
+    = form_for(:session, url: login_path) do |f|
+      = f.label "E-mail"
+      = f.email_field :email, class: 'form-control'
+      = f.label "Senha"
+      |  
+      = link_to "(Recuperar senha)", new_password_reset_path
+      = f.password_field :password, class: 'form-control'
+      = f.label :remember_me, class: "checkbox inline" do
+        = f.check_box :remember_me
+        span
+          | Lembrar-me neste computador?
+      = f.submit "Log in", class: "btn btn-primary"
+    p
+      | <br />Não tem uma conta? 
+      = link_to "Cadastre-se agora!", signup_path

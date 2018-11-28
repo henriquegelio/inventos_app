@@ -9,7 +9,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get login_path
     assert_response :success
-    assert_select "title", "Log In | #{@base_title}"
+    assert_select "title", "Entrar em sua conta | #{@base_title}"
   end
 
 end

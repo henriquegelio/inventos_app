@@ -1,0 +1,24 @@
+- provide(:title, "Home")
+- if logged_in?
+  .row
+    aside.col-md-4
+      section.user_info
+        = render 'shared/user_info'
+      section.micropost_form
+        = render 'shared/micropost_form'
+    .col-md-8
+      h3
+        | Micropost Feed
+      = render 'shared/feed'
+- else
+  .center.jumbotron
+    h1
+      | Bem vindo ao Minions Virtual!
+    h2
+      |  O melhor site para compra de bonecos 
+      a[href="https://pt.wikipedia.org/wiki/Minions_(filme)"]
+        | Minions
+      |  em minuatura! 
+    = link_to "Cadastre-se!", signup_path, class: "btn btn-lg btn-primary"
+  .center
+    = link_to image_tag("logo.png", alt: "Minions logo", width: "400", heigh: "900"), 'https://www.facebook.com/minions/'

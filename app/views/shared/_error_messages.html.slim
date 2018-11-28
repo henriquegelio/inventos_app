@@ -1,0 +1,10 @@
+- if object.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      |  Foram encontrados 
+      = pluralize(object.errors.count, "erro")
+      | . Corrija-os para continuar. 
+    ul
+      - object.errors.full_messages.each do |msg|
+        li
+          = msg
