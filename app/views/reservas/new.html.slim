@@ -1,0 +1,24 @@
+- provide(:title, "Criar Reserva")
+h1
+  | Criar Reserva
+.row
+  .col-md-6.col-md-offset-3
+    = form_for(@reserva, url: reservas_path) do |f|
+      b
+      = f.label :produto, "Produto Selecionado: #{@produto.nome}"
+      | <br />
+      = f.label :produto_valorS, "Valor individual: R$ #{@produto.preco},00"
+      | <br /><br />
+      = f.label :quantidade
+      = f.text_field :quantidade, class: 'form-control'
+      = f.label :estado
+      = f.text_field :estado, class: 'form-control'
+      = f.label :cidade
+      = f.text_field :cidade, class: 'form-control'
+      = f.label :rua
+      = f.text_field :rua, class: 'form-control'
+      = f.label :bairro
+      = f.text_field :bairro, class: 'form-control'
+      = f.label :numero
+      = f.text_field :numero, class: 'form-control'
+      = f.submit "Reservar", class: "btn btn-primary"

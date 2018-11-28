@@ -15,5 +15,4 @@
     | R$ 
     = @produto.preco
     | ,00
-
-= link_to button_tag("Reservar Agora", class: "btn btn-info", type:"button"), edit_produto_path
+= link_to button_tag("Reservar Agora", class: "btn btn-info", type:"button"), new_reserva_path(:param1 => @produto.id)
