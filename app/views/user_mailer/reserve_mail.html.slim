@@ -1,0 +1,28 @@
+h1
+  | Minions Virtual
+p
+  b
+    | Hi 
+    = @user.name
+    | ,
+p
+  |  Você acaba de reservar o seu produto. 
+  | <br />
+  | <br />
+   Pedimos a gentileza de aguardar alguns dias que entraremos em contato com você.
+  | <br />
+  | <br />
+  | Os dados da sua reserva são:
+  | <br />
+  | <br />
+  | Produto:  
+  = @produto.nome
+  |  <br />
+  | Quantidade:   #{@reserva.quantidade}
+  | <br />
+  | Preço Total:  R$ #{@reserva.quantidade*@produto.preco},00
+  | <br />
+  | Detalhes de entrega: #{@reserva.rua}, número #{@reserva.numero}, #{@reserva.cidade} - #{@reserva.estado}
+  | <br />
+  | <br />
+  | Atenciosamente, <br /> Minions Virtual

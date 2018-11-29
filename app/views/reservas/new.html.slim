@@ -9,6 +9,7 @@ h1
       | <br />
       = f.label :produto_valorS, "Valor individual: R$ #{@produto.preco},00"
       | <br /><br />
+      = hidden_field_tag :param1, @produto.id
       = f.label :quantidade
       = f.text_field :quantidade, class: 'form-control'
       = f.label :estado

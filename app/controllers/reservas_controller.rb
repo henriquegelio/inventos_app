@@ -7,13 +7,17 @@ class ReservasController < ApplicationController
   end
   
   def create
-    @reserva = User.new(reserva_params)
+    @reserva = Reserva.new(reserva_params)
+    @produto = Produto.find_by(id: params[:param1])
+    @user = current_user
     if @reserva.valid?
-      ##@user.send_activation_email
+      @user.send_reserve_confirmation_email_to_buyer @user, @reserva, @produto
+      @user.send_reserve_confirmation_email_to_host @user, @reserva, @produto
       flash[:info] = "Reserva criada com sucesso. Por gentileza, verifique a confirmação em seu e-mail. Em breve entraremos em contato."
       redirect_to produtos_url
     else
-      render 'new'
+      flash[:danger] = "Dados preenchidos incorretamente."
+      redirect_to new_reserva_path(param1: @produto.id)
     end
   end
   

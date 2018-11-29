@@ -1,0 +1,22 @@
+h1
+  | Minions Virtual
+p
+  b
+    | Olá Administrador,
+p
+  |  Hey yo! Compraram o nosso produto. Muito legal, né?
+  | <br /><br />
+  | Os dados da compra realizada são:
+  | <br />
+  | <br />
+  | Produto:  
+  = @produto.nome
+  |  <br />
+  | Quantidade:   #{@reserva.quantidade}
+  | <br />
+  | Preço Total:  R$ #{@reserva.quantidade*@produto.preco},00
+  | <br />
+  | Detalhes de entrega: #{@reserva.rua}, número #{@reserva.numero}, #{@reserva.cidade} - #{@reserva.estado}
+  | <br />
+  | <br />
+  | Atenciosamente, <br /> Minions Virtual

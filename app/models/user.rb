@@ -62,6 +62,16 @@ class User < ApplicationRecord
       update_columns(reset_digest:  User.digest(reset_token), reset_sent_at: Time.zone.now)
     end
     
+    # Sends Reserve confirmation e-mail to the buyer.
+    def send_reserve_confirmation_email_to_buyer (user, reserva, produto)
+      UserMailer.reserve_mail(user, reserva, produto).deliver_now
+    end
+    
+    # Sends Reserve confirmation e-mail to the host.
+    def send_reserve_confirmation_email_to_host (user, reserva, produto)
+      UserMailer.reserve_host(user, reserva, produto).deliver_now
+    end
+    
     # Sends password reset email.
     def send_password_reset_email
       UserMailer.password_reset(self).deliver_now

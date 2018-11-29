@@ -1,0 +1,28 @@
+Olá #{ @user.name },
+
+Você acaba de reservar o seu produto. Pedimos a gentileza de aguardar alguns dias que entraremos em contato com você.
+
+Os dados da sua reserva são:
+
+
+
+Minions Virtual
+
+Hi #{ @user.name }
+
+
+Você acaba de reservar o seu produto.
+
+
+Pedimos a gentileza de aguardar alguns dias que entraremos em contato com você.
+
+
+Os dados da sua reserva são:
+
+
+Produto:  #{ @produto.nome }
+Quantidade:   #{ @reserva.quantidade }
+Preço Total:  R$ #{ @reserva.quantidade*@produto.preco },00
+Detalhes de entrega: #{ @reserva.rua }, número #{ @reserva.numero }, #{ @reserva.cidade } - #{@reserva.estado }
+Atenciosamente,
+Minions Virtual
